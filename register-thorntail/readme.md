@@ -98,21 +98,21 @@ Example needs to be created.
 
 ### Debug in VSCode
 
-Alterar launch.json:
+Alterar launch.json
 
-"version": "0.2.0",
-    "configurations": [
-        {
-            "type": "java",
-            "name": "Debug (Attach)",
-            "request": "attach",
-            "hostName": "127.0.0.1",
-            "port": 5005
-        }
+    "version": "0.2.0",
+        "configurations": [
+            {
+                "type": "java",
+                "name": "Debug (Attach)",
+                "request": "attach",
+                "hostName": "127.0.0.1",
+                "port": 5005
+            }
 
 Executar o comando abaixo para executar attached no VSCode
 
-java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=5005,suspend=y -jar target/register-thorntail-thorntail.jar
+    java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=5005,suspend=y -jar target/register-thorntail-thorntail.jar
 
 
 
