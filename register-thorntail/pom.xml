@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" 
+  xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sonicfunctions</groupId>
   <artifactId>register-thorntail</artifactId>
@@ -36,6 +38,16 @@
       <artifactId>bcpkix-jdk15on</artifactId>
       <version>1.53</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jnosql.artemis</groupId>
+      <artifactId>artemis-document</artifactId>
+      <version>0.0.9</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jnosql.diana</groupId>
+      <artifactId>mongodb-driver</artifactId>
+      <version>0.0.9</version>
     </dependency>
   </dependencies>
   <build>
