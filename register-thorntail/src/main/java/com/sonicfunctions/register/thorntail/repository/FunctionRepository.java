@@ -11,6 +11,6 @@ import org.jnosql.artemis.Repository;
  */
 public interface FunctionRepository extends Repository<Function, Long> {
 
-    List<Function> findByName(String name);
+    Function findByName(String name);
 
 }

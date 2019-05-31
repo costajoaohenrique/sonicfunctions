@@ -10,5 +10,7 @@ import com.sonicfunctions.register.thorntail.domain.Function;
  */
 public interface RegisterService {
 
-    public void saveFunction (@NotNull @Valid Function function);
+    String saveFunction (@NotNull @Valid Function function);
+
+    Function getFunctionByName(@NotNull String name);
 }

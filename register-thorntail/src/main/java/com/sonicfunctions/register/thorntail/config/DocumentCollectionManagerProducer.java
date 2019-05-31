@@ -5,12 +5,12 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
-
-import com.sonicfunctions.register.thorntail.domain.Function;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jnosql.diana.api.Settings;
+import org.jnosql.diana.api.document.DocumentCollectionManager;
 import org.jnosql.diana.api.document.DocumentCollectionManagerFactory;
 import org.jnosql.diana.api.document.DocumentConfiguration;
 import org.jnosql.diana.mongodb.document.MongoDBDocumentConfiguration;
@@ -45,5 +45,10 @@ public class DocumentCollectionManagerProducer {
         managerFactory = configuration.get(Settings.of(settings));
     }
 
+    @Produces
+    public DocumentCollectionManager getManager() {
+        return managerFactory.get(collections);
+
+    }
 
 }

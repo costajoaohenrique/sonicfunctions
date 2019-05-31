@@ -16,10 +16,19 @@ import org.jnosql.artemis.DatabaseQualifier;
 public class RegisterServiceImpl implements RegisterService {
 
     @Override
-    public void saveFunction(@NotNull @Valid Function function) {
+    public String saveFunction(@NotNull @Valid Function function) {
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             FunctionRepository repository = container.select(FunctionRepository.class).select(DatabaseQualifier.ofDocument()).get();
-            repository.save(function);
+            function = repository.save(function);
+            return String.valueOf(function.getId());
+        }
+    }
+
+    @Override
+    public Function getFunctionByName(@NotNull String name) {
+        try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
+            FunctionRepository repository = container.select(FunctionRepository.class).select(DatabaseQualifier.ofDocument()).get();
+            return repository.findByName(name);
         }
     }
 
