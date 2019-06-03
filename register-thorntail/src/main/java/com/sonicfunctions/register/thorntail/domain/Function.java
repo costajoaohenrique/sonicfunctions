@@ -11,7 +11,7 @@ import org.jnosql.artemis.Id;
 public class Function {
 
     @Id
-    private long id;
+    private Long id;
 
     @Column
     private String name;
@@ -22,11 +22,11 @@ public class Function {
     @Column
     private String type;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

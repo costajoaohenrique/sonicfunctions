@@ -118,7 +118,7 @@ Executar o comando abaixo para executar attached no VSCode
 
 
 
-curl -H "Content-Type: application/json" -X POST -d '{"id":"1","name":"sum", "body":"1+1" "type":"javascript"}' http://localhost:8080/functions
+curl -H "Content-Type: application/json" -X POST -d '{"id":"1","name":"sum", "body":"1+1", "type":"javascript"}' http://localhost:8080/api/function
 
 
 
@@ -131,3 +131,11 @@ curl -s http://localhost:8080/apis/extensions/v1beta1/namespaces/default/deploym
 
 https://192.168.99.100:8443/api/v1/namespaces/default/pods curl http://localhost:8080/api/v1/namespaces/default/pods
 
+
+
+
+--- MONGO
+
+$ docker run -d --name mongodb-instance -p 27017:27017 mongo
+
+$ docker exec -it mongodb-instance /bin/bash
