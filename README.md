@@ -26,4 +26,6 @@ Para auxiliar na adoção desses padrões será utilizado as seguintes stacks:
 * Dentre outros...
 
 
+Teste'
+
 
