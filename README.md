@@ -13,16 +13,16 @@ A ideia desse projeto é a construção de um sistemas de compilação e execuç
 ## Arquitetura
 
 O sistema deve seguir padrões de microserviços tais como **Fault Tolerance**, **Health Check**, **Circuit Breaker** dentre outros.
-Será facilmente implantado em arquiteturas baseados em docker e Kubernetes. Parte do sistema (Não obrigatoriamente ser o todo) deverá também ser reativo seguindo fortemente os conceitos do  [The Reactive Manifesto](https://www.reactivemanifesto.org/)
+Será facilmente implantado em arquiteturas baseados em docker e Kubernetes. Parte do sistema (Não obrigatoriamente ser o todo) será reativo seguindo fortemente os conceitos do  [The Reactive Manifesto](https://www.reactivemanifesto.org/)
 
 Para auxiliar na adoção desses padrões será utilizado as seguintes stacks:
 
-* Microprofile com Thorntail (Microservices)
+* ~~Microprofile com Thorntail (Microservices)~~
 * Quarkus 
 * Eclipse Vert.x (Reactive)
 * Apache Camel (Integração entre os serviços)
 * Spring Boot
-* Netflix OSS (Stack de auxilio a Microservices)
+* ~~Netflix OSS (Stack de auxilio a Microservices)~~
 * Dentre outros...
 
 
