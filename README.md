@@ -29,3 +29,4 @@ Para auxiliar na adoção desses padrões será utilizado as seguintes stacks:
 Teste'
 
 
+https://www.graalvm.org/docs/reference-manual/embed/
