@@ -4,24 +4,11 @@
 #   A imagem é a base igual ao do quarkus, unica diferença é que junto a JVM será
 # instalada o graalvm e suas dependencias para compilação nativa
 #
-# 
-#
-#
+#  docker build -f docker-base/Dockerfile -t costajoaohenrique/sonicfunctions:base-graalvm-19.2.0 .
+#  docker push costajoaohenrique/sonicfunctions:base-graalvm-19.2.0
 #
 ###
-FROM fabric8/java-alpine-openjdk8-jre
-
-###################### GRAALVM ####################################
-RUN apt-get update && \
-    apt-get install -y wget gcc libz-dev && \
-    rm -rf /var/lib/apt/lists/*
-
+FROM oracle/graalvm-ce
 ARG VERSION=19.2.0
-RUN wget https://github.com/oracle/graal/releases/download/vm-$VERSION/graalvm-ce-linux-amd64-$VERSION.tar.gz && \
-    tar -xvzf graalvm-ce-$VERSION-linux-amd64.tar.gz && \
-    rm graalvm-ce-linux-amd64-$VERSION.tar.gz && \
-    /graalvm-ce-$VERSION/bin/gu install native-image
-
-ENV PATH=/graalvm-ce-$VERSION/bin:$PATH
-
-###################### GRAALVM ####################################
+RUN gu install native-image \
+    && gu install R
