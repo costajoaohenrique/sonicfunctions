@@ -14,7 +14,7 @@
 # docker run -i --rm -p 8080:8080 quarkus/sonicfunctions-compiler
 #
 ###
-FROM registry.access.redhat.com/ubi8/ubi-minimal
+FROM costajoaohenrique/sonicfunctions:base-graalvm-19.2.0
 WORKDIR /work/
 COPY target/*-runner /work/application
 RUN chmod 775 /work
