@@ -13,6 +13,11 @@
 #
 # docker run -i --rm -p 8080:8080 quarkus/sonicfunctions-compiler-jvm
 #
+#
+# mvn package -Dmaven.test.skip=true && docker build -f src/main/docker/jvm.Dockerfile -t quarkus/sonicfunctions-compiler-jvm . && docker run --rm -it -p 8080:8080 --name compiler_container quarkus/sonicfunctions-compiler-jvm
+#
+#
+
 ###
 FROM costajoaohenrique/sonicfunctions:base-graalvm-19.2.0
 ENV JAVA_OPTIONS="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
