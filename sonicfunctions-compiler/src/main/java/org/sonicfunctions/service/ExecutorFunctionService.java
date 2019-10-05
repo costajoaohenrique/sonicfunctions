@@ -5,6 +5,7 @@ import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.sonicfunctions.domain.Function;
 import org.sonicfunctions.domain.ResultExecutor;
 
 /**
@@ -28,6 +29,11 @@ public class ExecutorFunctionService {
             return ResultExecutor.ofNotSuccess(e.getMessage());
         }
     }
+
+    public void findAllFunctions(){
+        Function.findAll();
+    }
+    
 
 
 }

@@ -1,9 +1,14 @@
 package org.sonicfunctions.domain;
 
+import javax.persistence.Entity;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
 /**
  * Function
  */
-public class Function {
+@Entity
+public class Function extends PanacheEntity {
 
     private Long id;
 
