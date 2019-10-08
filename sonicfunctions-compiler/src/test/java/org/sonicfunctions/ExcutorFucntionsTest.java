@@ -29,4 +29,14 @@ public class ExcutorFucntionsTest {
         assertEquals(result,"nomeDaFuncao(30,77);");
     }
 
+    @Test
+    public void createCallJsTestSemParametros(){
+        SFunction function = SFunction.ofJS("nomeDaFuncao", "", 1L);
+
+        SortedMap<String, String> params = new TreeMap<String,String>();
+
+        String result = JsUtils.createCall(function,params,"");
+        assertEquals(result,"nomeDaFuncao();");
+    }
+
 } 

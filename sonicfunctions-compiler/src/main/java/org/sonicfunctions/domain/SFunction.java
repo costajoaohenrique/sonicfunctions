@@ -3,15 +3,11 @@ package org.sonicfunctions.domain;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
@@ -24,10 +20,6 @@ public class SFunction extends PanacheEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idFunction;
-
     private String name;
 
     private String sourceBody;
@@ -35,7 +27,7 @@ public class SFunction extends PanacheEntity implements Serializable {
     private Long idUser;
 
     @OneToMany(mappedBy = "function",cascade = CascadeType.PERSIST)
-    private List<SParameter> parameters;
+    private List<SParameter> parameters = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     private Language language;
@@ -46,14 +38,6 @@ public class SFunction extends PanacheEntity implements Serializable {
 
     public List<SParameter> getParameters() {
         return parameters;
-    }
-
-    public Long getIdFunction() {
-        return idFunction;
-    }
-
-    public void setIdFunction(Long idFunction) {
-        this.idFunction = idFunction;
     }
 
     public void setParameters(List<SParameter> parameters) {
@@ -102,9 +86,6 @@ public class SFunction extends PanacheEntity implements Serializable {
     }
 
     public SFunction addParam(String name, SParameter.Type type){
-        if(Objects.isNull(parameters)){
-            parameters = new ArrayList<>();
-        }
         SParameter param = SParameter.of(name,type);
         param.setFunction(this);
         parameters.add(param);
