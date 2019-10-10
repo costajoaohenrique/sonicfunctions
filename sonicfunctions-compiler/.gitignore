@@ -1,3 +1,5 @@
+settings.xml
+
 # Eclipse
 .project
 .classpath
@@ -5,7 +7,6 @@
 bin/
 
 # IntelliJ
-.idea
 *.ipr
 *.iml
 *.iws
