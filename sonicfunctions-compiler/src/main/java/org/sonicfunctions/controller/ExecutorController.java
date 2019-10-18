@@ -20,7 +20,7 @@ import org.sonicfunctions.service.ExecutorFunctionService;
 public class ExecutorController {
 
     @Inject
-    private ExecutorFunctionService service;
+    ExecutorFunctionService service;
 
     @GET
     @Path("/execute")

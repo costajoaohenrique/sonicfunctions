@@ -20,14 +20,14 @@ import org.sonicfunctions.utils.JsUtils;
 public class ExecutorFunctionService {
 
     @Inject
-    private CompilerService service;
+    CompilerService compilerService;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ExecutorFunctionService.class);
 
     public ResultExecutor execute(String source) {
         LOGGER.info("Executing source");
         try {
-            String result = service.evalForExecute(source).toString();
+            String result = compilerService.evalForExecute(source).toString();
             return ResultExecutor.ofSuccess(result);
         } catch (Exception e) {
             LOGGER.error("Error executing source", e);

@@ -20,7 +20,7 @@ import org.sonicfunctions.service.CompilerService;
 public class CompilerController {
 
     @Inject
-    private CompilerService service;
+    CompilerService service;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CompilerController.class);
 

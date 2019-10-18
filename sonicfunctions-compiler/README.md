@@ -22,7 +22,7 @@ docker run --name sf-pgadmin --network=sf-network -p 15432:80 -e "PGADMIN_DEFAUL
 
 mvn package -Dmaven.test.skip=true && 
 
-mvn package -Dmaven.test.skip=true && docker build -f src/main/docker/jvm.Dockerfile -t quarkus/sonicfunctions-compiler-jvm . && docker run --rm -it -p 8080:8080 --name compiler_container --network=sf-network quarkus/sonicfunctions-compiler-jvm
+mvn package -Dmaven.test.skip=true && docker build -f src/main/docker/jvm.Dockerfile -t quarkus/sonicfunctions-compiler-jvm . && docker run --rm -it -p 8080:8080 --name compiler_container --network=postgres-network quarkus/sonicfunctions-compiler-jvm
 
 
 
