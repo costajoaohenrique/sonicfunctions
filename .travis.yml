@@ -1,2 +1,5 @@
 language: java
 script: mvn -f sonicfunctions-compiler/pom.xml clean package
+cache:
+  directories:
+  - "$HOME/.m2/repository"
