@@ -1,0 +1,2 @@
+language: java
+script: mvn -f sonicfunctions-compiler/pom.xml clean package
