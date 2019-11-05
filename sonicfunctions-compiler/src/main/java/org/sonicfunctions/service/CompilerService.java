@@ -36,6 +36,8 @@ public class CompilerService {
     public ResultCompiler eval(String source) {
         LOGGER.info("Evaluation source");
         try {
+
+            
             context.eval(Source.create("js",source));
             return ResultCompiler.ofValid();
         } catch (PolyglotException e) {
