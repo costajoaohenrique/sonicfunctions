@@ -1,5 +1,7 @@
 # The Sonic Functions Project
 
+[![Build Status](https://travis-ci.org/costajoaohenrique/sonicfunctions.svg?branch=master)](https://travis-ci.org/costajoaohenrique/sonicfunctions)
+
 
 ## O Projeto
 
